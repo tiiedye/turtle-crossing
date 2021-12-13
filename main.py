@@ -36,6 +36,7 @@ while game_is_on:
     # Detect if turtle reaches finish line
     if turtle.finish_line_reached():
         score.increase_level()
+        car_manager.increase_car_speed()
 
 # All code before exit
 screen.exitonclick()

@@ -19,6 +19,7 @@ class Player(Turtle):
 
     def finish_line_reached(self):
         if self.ycor() >= FINISH_LINE_Y:
+            self.goto(0, -280)
             return True
         else:
             return False
