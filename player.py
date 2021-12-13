@@ -1,3 +1,4 @@
+import turtle
 from turtle import Turtle
 
 STARTING_POSITION = (0, -280)
@@ -15,3 +16,9 @@ class Player(Turtle):
 
     def go_up(self):
         self.forward(20)
+
+    def finish_line_reached(self):
+        if self.ycor() >= FINISH_LINE_Y:
+            return True
+        else:
+            return False

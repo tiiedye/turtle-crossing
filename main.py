@@ -10,6 +10,7 @@ screen.tracer(0)
 
 turtle = Player()
 car_manager = CarManager()
+score = Scoreboard()
 
 screen.listen()
 screen.onkey(turtle.go_up, "Up")
@@ -29,7 +30,12 @@ while game_is_on:
     # Detect car collision
     for car in car_manager.all_cars:
         if turtle.distance(car) < 20:
+            score.game_over()
             game_is_on = False
+
+    # Detect if turtle reaches finish line
+    if turtle.finish_line_reached():
+        score.increase_level()
 
 # All code before exit
 screen.exitonclick()
